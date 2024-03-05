@@ -1,0 +1,49 @@
+#!/bin/bash
+
+# dotglob: to include hidden files and directories
+# globskipdots: to skip . and ..
+# globstar: to enable ** to match directories and subdirectories
+shopt -s globstar dotglob globskipdots
+
+# set -x
+
+_install() {
+  local relative_file
+  local target_file
+  local archive_file
+
+  # ignore directories
+  if [ -d "$1" ]; then
+    return
+  fi
+
+  relative_file="$(realpath --relative-to="./src" "$1")"
+  target_file="$HOME/$relative_file"
+  archive_file="$HOME/.dotfiles_archive/$relative_file"
+
+  if [ -L "$target_file" ]; then
+    echo "Already installed: $target_file"
+    return
+  fi
+
+  if [ -e "$target_file" ]; then
+    printf "Archiving: %s -> %s\n" "$target_file" "$archive_file"
+    mkdir -p "$(dirname "$archive_file")"
+    mv "$target_file" "$archive_file"
+  fi
+
+  # if the target_file does not exist and not a symlink,
+  # symlink it
+  if ! [ -e "$target_file" ] && ! [ -L "$target_file" ]; then
+    printf "Installing: %s -> %s\n" "$1" "$target_file"
+    mkdir -p "$(dirname "$target_file")"
+    ln -s $(realpath "$1") "$target_file"
+  fi
+}
+
+for f in ./src/**/*; do
+  _install "$f"
+done
+
+unset -f _install
+unset f

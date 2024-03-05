@@ -1,0 +1,10 @@
+#!/bin/bash
+
+/bin/bash ./install
+
+echo "___________results___________"
+
+tree -aR "$HOME/"
+source "$HOME/.bashrc"
+
+echo "_____________done____________"

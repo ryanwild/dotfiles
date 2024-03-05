@@ -1,0 +1,35 @@
+[init]
+	defaultBranch = main
+[core]
+	excludesFile = ~/.global_gitignore
+	editor = /usr/bin/code --wait
+[user]
+	name = Ryan Wild
+	email = ryanwild@users.noreply.github.com
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILXKswCHcmnGq3LpdwkdgkBFot+f43LLyjg1TvCD+GVC
+[log]
+	date = iso-local
+[commit]
+	gpgSign = true
+[tag]
+	forceSignAnnotated = true
+[push]
+	gpgsign = if-asked
+	autoSetupRemote = true
+[gpg]
+	format = ssh
+[gpg "ssh"]
+  program = "/opt/1Password/op-ssh-sign"
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+[alias]
+	branch-ls = for-each-ref --sort=committerdate refs/heads/ --format='%(committerdate:short) %(refname:short)'
+	home = stash save && checkout master && stash pop
+	last = log -1 HEAD
+	last-changed = log -1 HEAD --stat
+	last-diff = log -1 HEAD --patch
+	ls = log --pretty=format:'%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]' --decorate
+	rehash = commit --amend --reset-author --no-edit
+	#An alias without ! is treated as a git command
+	apply-pr = "!applypr() { gh pr diff $1 | git apply; }; applypr"
+	rehash-pr = "!rehashpr() { gh pr checkout $1 && git rehash && git push origin $(git rev-parse --abbrev-ref HEAD) -f; }; rehashpr"

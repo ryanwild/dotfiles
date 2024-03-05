@@ -1,0 +1,17 @@
+#!/bin/bash
+
+track_source() {
+  local target
+  local target_directory
+
+  target="./src/$(realpath --relative-to="$HOME" "$1")"
+  target_directory="$(dirname "$target")"
+
+  echo "Tracking from: $1 to: $target"
+  mkdir -p "$target_directory"
+  cp -R "$1" --target-directory="$target_directory"
+}
+
+track_source "$@"
+
+unset -f track_source
