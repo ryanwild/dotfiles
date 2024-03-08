@@ -5,6 +5,8 @@ alias _netstat_ports="sudo netstat -tulpn"
 alias zola="flatpak run org.getzola.zola"
 alias gs="git status"
 alias ge="git commit --amend --no-edit"
+alias check_wifi="nmcli dev wifi"
+alias srv_here="python3 -m http.server --bind 127.0.0.1 --directory . 8080"
 
 #usage: docker-container-host-ip <container-name>
 docker-container-host-ip () {
@@ -24,9 +26,9 @@ fd() {
   cd "$dir"
 }
 
-fts() {
+fcode() {
   local f
-  f=$(find . \( -name '*.tsx' -o -name '*.ts' \) -o -type f -print 2> /dev/null | fzf +m --preview 'bat {}') &&
+  f=$(find ${1:-.} -not -path '*/.*' -type f -print 2> /dev/null | fzf +m --preview 'bat --color=always {}') &&
   code "$f"
 }
 
