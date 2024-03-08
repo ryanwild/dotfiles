@@ -24,4 +24,4 @@ _prompt() {
   echo -ne "$_BOLD$_LIGHTREDλ$_NORMAL"
 }
 
-PS1='$(_error_code)$(echo -ne "$_DARK_GREY")\n┏ \t \w \n┗$(echo -ne "$_NORMAL") $(_prompt) '
+PS1='$(_error_code)\n┏ $(echo -ne "$_DARK_GREY")\t \w $(echo -ne "$_NORMAL")\n┗ $(_prompt) '
