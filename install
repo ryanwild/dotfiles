@@ -37,7 +37,7 @@ _install() {
   if ! [ -e "$target_file" ] && ! [ -L "$target_file" ]; then
     printf "Installing: %s -> %s\n" "$1" "$target_file"
     mkdir -p "$(dirname "$target_file")"
-    ln -s $(realpath "$1") "$target_file"
+    ln -s "$(realpath "$1")" "$target_file"
   fi
 }
 

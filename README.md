@@ -1,17 +1,17 @@
 ```
-       ▄▄▄▄▄▄ ▄     ▄ ▄▄▄▄▄▄▄         
-      █      █ █ ▄ █ █       █        
-      █  ▄   █ ██ ██ █    ▄▄▄█        
-      █ █▄█  █       █   █▄▄▄         
-      █      █       █    ▄▄▄█        
-      █  ▄   █   ▄   █   █▄▄▄         
-      █▄█ █▄▄█▄▄█ █▄▄█▄▄▄▄▄▄▄█        
- ▄▄   ▄▄ ▄▄▄▄▄▄▄ ▄▄▄▄▄▄ ▄▄   ▄▄    ▄▄ 
+       ▄▄▄▄▄▄ ▄     ▄ ▄▄▄▄▄▄▄
+      █      █ █ ▄ █ █       █
+      █  ▄   █ ██ ██ █    ▄▄▄█
+      █ █▄█  █       █   █▄▄▄
+      █      █       █    ▄▄▄█
+      █  ▄   █   ▄   █   █▄▄▄
+      █▄█ █▄▄█▄▄█ █▄▄█▄▄▄▄▄▄▄█
+ ▄▄   ▄▄ ▄▄▄▄▄▄▄ ▄▄▄▄▄▄ ▄▄   ▄▄    ▄▄
 █  █ █  █       █      █  █ █  █  █  █
 █  █▄█  █    ▄▄▄█  ▄   █  █▄█  █  █  █
 █       █   █▄▄▄█ █▄█  █       █  █  █
 █▄     ▄█    ▄▄▄█      █   ▄   █  █▄▄█
-  █   █ █   █▄▄▄█  ▄   █  █ █  █   ▄▄ 
+  █   █ █   █▄▄▄█  ▄   █  █ █  █   ▄▄
   █▄▄▄█ █▄▄▄▄▄▄▄█▄█ █▄▄█▄▄█ █▄▄█  █▄▄█
 
 ```
@@ -30,13 +30,11 @@ To add existing dotfiles to the repo run the `track` script
 $ ./track ~/.example-dotfile
 ```
 
-
 # TODO:
 
- * [ ] Add ignore feature: https://www.baeldung.com/linux/globbing-exclude-pattern
- * [ ] Rename "src" directory
- * [ ] Clean up track script
- * [ ] Rename "stub" directory
- * [ ] Consider a cleaner test environment
- * [ ] Add CI with GitHub Actions
- * [ ] Add pre-run prompt: https://www.shellhacks.com/yes-no-bash-script-prompt-confirmation/
+- [ ] Add ignore feature: https://www.baeldung.com/linux/globbing-exclude-pattern
+- [ ] Rename "src" directory
+- [ ] Clean up track script
+- [x] Consider a cleaner test environment
+- [x] ~~Add CI with GitHub Actions~~ Nah
+- [ ] Add pre-run prompt: https://www.shellhacks.com/yes-no-bash-script-prompt-confirmation/

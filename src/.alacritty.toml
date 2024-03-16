@@ -2,6 +2,9 @@ live_config_reload = true
 
 [window]
 dimensions = { columns = 120, lines = 40 }
+position = { x = 0, y = 0 }
+padding = { x = 10, y = 10 }
+startup_mode = "Maximized"
 opacity = 1
 title = "💀"
 dynamic_title = false
@@ -11,19 +14,19 @@ decorations_theme_variant = "dark"
 size = 9
 
 [font.bold]
-family = "JetBrainsMono Nerd Font"
+family = "BlexMono Nerd Font"
 style = "Bold"
 
 [font.bold_italic]
-family = "JetBrainsMono Nerd Font"
+family = "BlexMono Nerd Font"
 style = "Bold Italic"
 
 [font.italic]
-family = "JetBrainsMono Nerd Font"
+family = "BlexMono Nerd Font"
 style = "Italic"
 
 [font.normal]
-family = "JetBrainsMono Nerd Font"
+family = "BlexMono Nerd Font"
 style = "Regular"
 
 [mouse]
@@ -48,13 +51,6 @@ bindings = [
     { key = "N", mods = "Control|Shift", action ="CreateNewWindow" },
 ]
 
-####################################################
-# Nord Theme
-
-[colors.primary]
-background = "#222222"
-foreground = "#d8dee9"
-dim_foreground = "#a5abb6"
 
 [colors.cursor]
 text = "CellBackground"
@@ -76,32 +72,28 @@ background = "#88c0d0"
 background = "#434c5e"
 foreground = "#d8dee9"
 
+## Tomorrow Dark
+[colors.primary]
+background = "0x1d1f21"
+foreground = "0xc5c8c6"
+
 [colors.normal]
-black = "#3b4252"
-red = "#bf616a"
-green = "#a3be8c"
-yellow = "#ebcb8b"
-blue = "#81a1c1"
-magenta = "#b48ead"
-cyan = "#88c0d0"
-white = "#e5e9f0"
+black = "0x1d1f21"
+red = "0xcc6666"
+green = "0xb5bd68"
+yellow = "0xf0c674"
+blue = "0x81a2be"
+magenta = "0xb294bb"
+cyan = "0x8abeb7"
+white = "0xc5c8c6"
 
 [colors.bright]
-black = "#4c566a"
-red = "#bf616a"
-green = "#a3be8c"
-yellow = "#ebcb8b"
-blue = "#81a1c1"
-magenta = "#b48ead"
-cyan = "#8fbcbb"
-white = "#eceff4"
+black = "0x969896"
+red = "0xcc6666"
+green = "0xb5bd68"
+yellow = "0xf0c674"
+blue = "0x81a2be"
+magenta = "0xb294bb"
+cyan = "0x8abeb7"
+white = "0xffffff"
 
-[colors.dim]
-black = "#373e4d"
-red = "#94545d"
-green = "#809575"
-yellow = "#b29e75"
-blue = "#68809a"
-magenta = "#8c738c"
-cyan = "#6d96a5"
-white = "#aeb3bb"

@@ -6,6 +6,10 @@ diva-rmi() {
   docker rmi -f $(docker images | grep 'diva-' | awk '{print $3}') && docker system prune -f && docker images
 }
 
+sm_fix_missing_env() {
+  mkdir -p "$(dirname $1)" && touch $1
+}
+
 # usage: smtest core-frontend
 smtest() {
   back=$(pwd)
@@ -24,10 +28,10 @@ smlint() {
   local e
   back=$(pwd)
   islandDir=$(echo "$1" | tr '-' '/')
-  e=$(_divadir &&
+
+  _divadir &&
   docker compose run -it --rm re-store-tools sh -c "eslint --fix --quiet --ext=js,ts,tsx islands/$islandDir" &&
-  cd "$back")
-  return $?
+  cd "$back"
 }
 
 #usage: smlint-translations <eslint-flags>

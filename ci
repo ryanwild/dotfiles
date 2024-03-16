@@ -1,6 +1,0 @@
-#!/bin/bash
-
-docker build -t dotfiles:test .
-docker run -it --rm dotfiles:test
-
-docker rmi dotfiles:test
