@@ -16,6 +16,8 @@
 [push]
 	gpgsign = if-asked
 	autoSetupRemote = true
+[pull]
+	rebase = true
 [gpg]
 	format = ssh
 [gpg "ssh"]
@@ -23,13 +25,13 @@
 [url "ssh://git@github.com/"]
 	insteadOf = https://github.com/
 [alias]
-	branch-ls = for-each-ref --sort=committerdate refs/heads/ --format='%(committerdate:short) %(refname:short)'
 	home = stash save && checkout master && stash pop
 	last = log -1 HEAD
 	last-changed = log -1 HEAD --stat
 	last-diff = log -1 HEAD --patch
-	ls = log --pretty=format:'%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]' --decorate
+	log-small = log --pretty=format:'%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]' --decorate
 	rehash = commit --amend --reset-author --no-edit
-	#An alias without ! is treated as a git command
+	#An alias with ! is treated as a bash command
+	ls = "!git for-each-ref --sort=committerdate refs/heads/ --format='%(committerdate:local) (%(committerdate:relative)) %(if)%(HEAD)%(then)%(color:bold green)%(refname:short)%(color:reset)%(else)%(refname:short)%(end) %(upstream:remoteref)' --color=always | column -t"
 	apply-pr = "!applypr() { gh pr diff $1 | git apply; }; applypr"
 	rehash-pr = "!rehashpr() { gh pr checkout $1 && git rehash && git push origin $(git rev-parse --abbrev-ref HEAD) -f; }; rehashpr"

@@ -1,9 +1,9 @@
 live_config_reload = true
 
 [window]
-dimensions = { columns = 120, lines = 40 }
+dimensions = { columns = 120, lines = 60 }
 position = { x = 0, y = 0 }
-padding = { x = 10, y = 10 }
+padding = { x = 0, y = 0 }
 startup_mode = "Maximized"
 opacity = 1
 title = "💀"
@@ -30,11 +30,11 @@ family = "BlexMono Nerd Font"
 style = "Regular"
 
 [mouse]
-  hide_when_typing = true
-  bindings = [
-    { action = "PasteSelection", mouse = "Middle" },
-    { action = "CopySelection", mouse = "Right" },
-  ]
+hide_when_typing = true
+bindings = [
+  { action = "PasteSelection", mouse = "Middle" },
+  { action = "CopySelection", mouse = "Right" },
+]
 
 [cursor]
 style = { shape = "Beam", blinking = "Always" }
@@ -46,9 +46,9 @@ thickness = 0.15
 
 [keyboard]
 bindings = [
-    { key = "Escape", mods = "Control", action = "ToggleViMode" },
-    { key = "I", mode = "Vi|~Search", action = "ToggleViMode" },
-    { key = "N", mods = "Control|Shift", action ="CreateNewWindow" },
+  { key = "Escape", mods = "Control", action = "ToggleViMode" },
+  { key = "I", mode = "Vi|~Search", action = "ToggleViMode" },
+  { key = "N", mods = "Control|Shift", action = "CreateNewWindow" },
 ]
 
 
@@ -74,26 +74,25 @@ foreground = "#d8dee9"
 
 ## Tomorrow Dark
 [colors.primary]
-background = "0x1d1f21"
-foreground = "0xc5c8c6"
+background = "#1d1f21"
+foreground = "#c5c8c6"
 
 [colors.normal]
-black = "0x1d1f21"
-red = "0xcc6666"
-green = "0xb5bd68"
-yellow = "0xf0c674"
-blue = "0x81a2be"
-magenta = "0xb294bb"
-cyan = "0x8abeb7"
-white = "0xc5c8c6"
+black = '#282a2e'
+red = '#a54242'
+green = '#8c9440'
+yellow = '#de935f'
+blue = '#5f819d'
+magenta = '#85678f'
+cyan = '#5e8d87'
+white = '#707880'
 
 [colors.bright]
-black = "0x969896"
-red = "0xcc6666"
-green = "0xb5bd68"
-yellow = "0xf0c674"
-blue = "0x81a2be"
-magenta = "0xb294bb"
-cyan = "0x8abeb7"
-white = "0xffffff"
-
+black = '#373b41'
+red = '#cc6666'
+green = '#b5bd68'
+yellow = '#f0c674'
+blue = '#81a2be'
+magenta = '#b294bb'
+cyan = '#8abeb7'
+white = '#c5c8c6'

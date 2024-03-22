@@ -20,11 +20,6 @@ if [ -d ~/.bashrc.d ]; then
         if [ -f "$rc" ]; then
             . "$rc"
         fi
-        # if [ -L "$rc" ]; then
-            # echo $(readlink -- "$rc")
-            # cd /home/$(whoami)/projects/dotfiles
-            # . $(readlink -- "$rc")
-        # fi
     done
 fi
 unset rc
